@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.sunil__parcha.Modals.ProductEntity;
 import com.sunil__parcha.Modals.Products;
 import com.sunil__parcha.Repositories.ProductRepo;
 
@@ -46,8 +44,22 @@ public class ProductController {
 	}
 	
 	@GetMapping(value="/products/inCategory/{id}")
-	public List<ProductEntity> categoryById(@PathVariable("id")int id){
-		
-		return productRepo.findByCatogery(id);
+	public JSONObject categoryById(@PathVariable("id")int id){
+		JSONArray array = new JSONArray();		
+		for(Object[] i : productRepo.findByCatogery(id)) {
+			JSONObject obj1 = new JSONObject();
+			obj1.put("product_id", i[0]);
+			obj1.put("name", i[1]);
+			obj1.put("description", i[2]);
+			obj1.put("price", i[3]);
+			obj1.put("discounted_price", i[4]);
+			obj1.put("thumbnail", i[5]);
+			array.add(obj1);
+		}
+		JSONObject obj2 = new JSONObject();
+		obj2.put("count", productRepo.findByCatogery(id).size());
+		obj2.put("rows", array);
+		return obj2;
+	
 	}
 }
