@@ -32,6 +32,17 @@ public class Products {
 	private Double discounted_price;
 	
 	@NotEmpty
+	@Column(name="image")
+	private String image;
+
+	@NotEmpty
+	@Column(name="image_2")
+	private String image_2;
+	
+	@NotEmpty
+	@Column(name="display")
+	private String display;
+	@NotEmpty
 	@Column(name="thumbnail")
 	private String thumbnail;
 
@@ -85,7 +96,29 @@ public class Products {
 		this.thumbnail = thumbnail;
 	}
 	
-	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getImage_2() {
+		return image_2;
+	}
+
+	public void setImage_2(String image_2) {
+		this.image_2 = image_2;
+	}
+
+	public String getDisplay() {
+		return display;
+	}
+
+	public void setDisplay(String display) {
+		this.display = display;
+	}
 	
 	
 

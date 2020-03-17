@@ -1,8 +1,6 @@
 package com.sunil__parcha.Controllers;
 
 
-import java.util.List;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
