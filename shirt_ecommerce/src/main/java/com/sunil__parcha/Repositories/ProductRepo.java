@@ -19,4 +19,10 @@ public interface ProductRepo extends JpaRepository<Products, Integer>{
 	@Query(value = "select p.product_id, p.name, p.description, p.price, p.discounted_price, p.thumbnail from product p" + 
 			" INNER JOIN product_category pc on p.product_id = pc.product_id where pc.category_id = :id", nativeQuery = true)
 	public List<Object[]> findByCatogery(@Param("id") int id);
+	
+	
+	@Query(value = "select p.product_id, p.name, p.description, p.price, p.discounted_price, p.thumbnail, pc.category_id from product p " + 
+			"INNER JOIN product_category pc on p.product_id = pc.product_id " + 
+			"INNER JOIN category c on pc.category_id = c.category_id where c.department_id = :id", nativeQuery = true)
+	public List<Object[]> findByDepartment(@Param("id") int id);
 }

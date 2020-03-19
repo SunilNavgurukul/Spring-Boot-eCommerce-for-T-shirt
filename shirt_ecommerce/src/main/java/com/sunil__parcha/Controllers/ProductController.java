@@ -62,4 +62,24 @@ public class ProductController {
 		return obj2;
 	
 	}
+	
+	@GetMapping(value="/products/inDepartment/{id}")
+	public JSONObject DepartmentById(@PathVariable("id")int id){
+		JSONArray array = new JSONArray();		
+		for(Object[] i : productRepo.findByDepartment(id)) {
+			JSONObject obj1 = new JSONObject();
+			obj1.put("product_id", i[0]);
+			obj1.put("name", i[1]);
+			obj1.put("description", i[2]);
+			obj1.put("price", i[3]);
+			obj1.put("discounted_price", i[4]);
+			obj1.put("thumbnail", i[5]);
+			array.add(obj1);
+		}
+		JSONObject obj2 = new JSONObject();
+		obj2.put("count", productRepo.findByDepartment(id).size());
+		obj2.put("rows", array);
+		return obj2;
+	
+	}
 }
