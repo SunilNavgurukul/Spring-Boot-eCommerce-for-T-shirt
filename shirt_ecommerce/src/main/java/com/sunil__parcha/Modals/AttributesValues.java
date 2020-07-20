@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "attribute_value")
-public class Attributes_values {
+public class AttributesValues {
 
 	@Id
 	@GeneratedValue

@@ -14,9 +14,9 @@ public interface CategoryRepo extends JpaRepository<Category, Integer> {
 	@Query(value = "select * from category LIMIT 20", nativeQuery = true)
 	public List<Category> findByLimit();
 
-	@Query(value = "select p.category_id, p.department_id, p.name from category p where p.category_id = :id", nativeQuery = true)
+	@Query(value = "select c.name, c.category_id, c.department_id from category c join product_category p where p.category_id = c.category_id and p.product_id = :id", nativeQuery = true)
 	public List<Object[]> findProductById(@Param("id") int id);
 
-	@Query(value = "select p.category_id, p.name, p.description from category p where department_id = :id", nativeQuery = true)
-	public List<Object[]> findDepartmentById(@Param("id") int id);
+	@Query(value = "select * from category where department_id = :id", nativeQuery = true)
+	public List<Category> findByDepartment_id(@Param("id") int id);
 }
