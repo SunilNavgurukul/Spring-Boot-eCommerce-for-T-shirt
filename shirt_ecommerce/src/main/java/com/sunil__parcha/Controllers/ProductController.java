@@ -3,6 +3,7 @@ package com.sunil__parcha.Controllers;
 
 import java.util.Optional;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,4 +43,11 @@ public class ProductController {
 		return productservice.findByDepartment(id, page, limit, description_length);
 	
 	}
+	
+	@GetMapping(value="/products/{id}/details")
+	public JSONArray DepartmentById(@PathVariable("id")int id) {
+		return productservice.findByProductId(id);
+	
+	}
+	
 }
