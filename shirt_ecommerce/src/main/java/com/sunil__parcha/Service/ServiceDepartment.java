@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sunil__parcha.Modals.department;
+import com.sunil__parcha.Modals.Department;
 import com.sunil__parcha.Repositories.DepartmentRepo;
 
 @Service
@@ -15,11 +15,11 @@ public class ServiceDepartment {
 	@Autowired
 	private DepartmentRepo departmentrepo;
 
-	public List<department> findAll() {
+	public List<Department> findAll() {
 		return departmentrepo.findAll();
 	}
 
-	public Optional<department> findById(int id) {
+	public Optional<Department> findById(int id) {
 		return departmentrepo.findById(id);
 	}
 

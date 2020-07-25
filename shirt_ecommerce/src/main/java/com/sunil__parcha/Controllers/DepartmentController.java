@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sunil__parcha.Modals.department;
+import com.sunil__parcha.Modals.Department;
 import com.sunil__parcha.Service.ServiceDepartment;
 
 @RestController
@@ -18,12 +18,12 @@ public class DepartmentController {
 	ServiceDepartment departmentService;
 
 	@GetMapping(value = "/departments")
-	private List<department> getDepartment() {
+	private List<Department> getDepartment() {
 		return departmentService.findAll();
 	}
 
 	@GetMapping(value = "/departments/{id}")
-	private Optional<department> getDepartmentById(@PathVariable("id") int id) {
+	private Optional<Department> getDepartmentById(@PathVariable("id") int id) {
 		return departmentService.findById(id);
 	}
 }
