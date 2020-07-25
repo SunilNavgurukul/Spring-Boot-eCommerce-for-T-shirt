@@ -20,7 +20,7 @@ public class AttributeService {
 	public List<attribute> findAll() {
 		return attributerepo.findAll();
 	}
-	
+
 	public Optional<attribute> findById(int id) {
 		return attributerepo.findById(id);
 	}
@@ -28,19 +28,19 @@ public class AttributeService {
 	@SuppressWarnings("unchecked")
 	public JSONArray findByAttributeValueId(int id) {
 		JSONArray array = new JSONArray();
-		for(Object[] i : attributerepo.findByAttributeValueId(id)) {
+		for (Object[] i : attributerepo.findByAttributeValueId(id)) {
 			JSONObject obj = new JSONObject();
 			obj.put("attribute_id", i[0]);
 			obj.put("value", i[1]);
 			array.add(obj);
 		}
 		return array;
-	} 
-	
+	}
+
 	@SuppressWarnings("unchecked")
 	public JSONArray AttributeValueProduct(int id) {
 		JSONArray array = new JSONArray();
-		for(Object[] i : attributerepo.findByAttributeValueProduct(id)) {
+		for (Object[] i : attributerepo.findByAttributeValueProduct(id)) {
 			JSONObject obj = new JSONObject();
 			obj.put("attribute_name", i[0]);
 			obj.put("attribute_value_id", i[1]);
@@ -48,8 +48,6 @@ public class AttributeService {
 			array.add(obj);
 		}
 		return array;
-	} 
-	
-	
-	
+	}
+
 }

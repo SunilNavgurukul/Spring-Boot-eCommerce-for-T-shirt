@@ -43,5 +43,5 @@ public interface ProductRepo extends JpaRepository<Products, Integer> {
 //			"where p.product_id = pc.product_id and c.category_id = pc.category_id and d.department_id = c.department_id and\n" + 
 //			"p.product_id=:id", nativeQuery = true)
 //	public List<Object[]> findByLocationId(int id);
-	
+
 }

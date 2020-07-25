@@ -4,8 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.sunil__parcha.Modals.department;
 
-
 @Repository
-public interface DepartmentRepo extends JpaRepository<department, Integer>{
-	
+public interface DepartmentRepo extends JpaRepository<department, Integer> {
+
 }

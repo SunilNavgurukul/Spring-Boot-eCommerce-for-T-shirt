@@ -13,10 +13,10 @@ import com.sunil__parcha.Repositories.CategoryRepo;
 
 @Service
 public class CategoryService {
-	
+
 	@Autowired
 	private CategoryRepo categoryrepo;
-	
+
 	@SuppressWarnings("unchecked")
 	public JSONObject findDataById() {
 		JSONObject obj = new JSONObject();
@@ -28,12 +28,12 @@ public class CategoryService {
 	public Optional<Category> findById(int id) {
 		return categoryrepo.findById(id);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public JSONArray findProductById(int id) {
 		JSONArray array = new JSONArray();
 		JSONObject obj = new JSONObject();
-		for(Object[] i : categoryrepo.findProductById(id)) {
+		for (Object[] i : categoryrepo.findProductById(id)) {
 			obj.put("category_id", i[1]);
 			obj.put("department_id", i[2]);
 			obj.put("name", i[0]);

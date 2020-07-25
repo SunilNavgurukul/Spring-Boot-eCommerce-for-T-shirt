@@ -8,46 +8,44 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name="product")
+@Table(name = "product")
 public class Products {
 	@Id
 	@GeneratedValue
-	@Column(name="product_id")
+	@Column(name = "product_id")
 	private int product_id;
-	
+
 	@NotEmpty
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	
+
 	@NotEmpty
-	@Column(name="description")
+	@Column(name = "description")
 	private String description;
-	
+
 	@NotEmpty
-	@Column(name="price")
+	@Column(name = "price")
 	private Double price;
-	
+
 	@NotEmpty
-	@Column(name="discounted_price")
+	@Column(name = "discounted_price")
 	private Double discounted_price;
-	
+
 	@NotEmpty
-	@Column(name="image")
+	@Column(name = "image")
 	private String image;
 
 	@NotEmpty
-	@Column(name="image_2")
+	@Column(name = "image_2")
 	private String image_2;
-	
+
 	@NotEmpty
-	@Column(name="display")
+	@Column(name = "display")
 	private String display;
 	@NotEmpty
-	@Column(name="thumbnail")
+	@Column(name = "thumbnail")
 	private String thumbnail;
 
-	
-	
 	public int getProduct_id() {
 		return product_id;
 	}
@@ -95,7 +93,7 @@ public class Products {
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
 	}
-	
+
 	public String getImage() {
 		return image;
 	}
@@ -119,7 +117,5 @@ public class Products {
 	public void setDisplay(String display) {
 		this.display = display;
 	}
-	
-	
 
 }

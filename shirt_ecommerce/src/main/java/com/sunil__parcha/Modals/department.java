@@ -8,20 +8,20 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class department {
-	
+
 	@Id
 	@GeneratedValue
-	@Column(name="department_id")
+	@Column(name = "department_id")
 	private int department_id;
 
 	@NotEmpty
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	
+
 	@NotEmpty
-	@Column(name="description")
+	@Column(name = "description")
 	private String description;
-	
+
 	public int getDepartment_id() {
 		return department_id;
 	}
@@ -46,6 +46,4 @@ public class department {
 		this.description = description;
 	}
 
-	
 }
-

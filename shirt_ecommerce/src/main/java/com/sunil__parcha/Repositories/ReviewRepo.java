@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.sunil__parcha.Modals.Review;
 
 @Repository
-public interface ReviewRepo extends JpaRepository<Review, Integer>{
+public interface ReviewRepo extends JpaRepository<Review, Integer> {
 
 }

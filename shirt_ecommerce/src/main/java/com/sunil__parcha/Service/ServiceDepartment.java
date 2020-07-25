@@ -14,13 +14,13 @@ public class ServiceDepartment {
 
 	@Autowired
 	private DepartmentRepo departmentrepo;
-	
+
 	public List<department> findAll() {
 		return departmentrepo.findAll();
 	}
-	
+
 	public Optional<department> findById(int id) {
 		return departmentrepo.findById(id);
 	}
-	
+
 }

@@ -13,16 +13,16 @@ import com.sunil__parcha.Service.ServiceDepartment;
 
 @RestController
 public class DepartmentController {
-	
+
 	@Autowired
 	ServiceDepartment departmentService;
-	
-	@GetMapping(value="/departments")
+
+	@GetMapping(value = "/departments")
 	private List<department> getDepartment() {
 		return departmentService.findAll();
 	}
-	
-	@GetMapping(value="/departments/{id}")
+
+	@GetMapping(value = "/departments/{id}")
 	private Optional<department> getDepartmentById(@PathVariable("id") int id) {
 		return departmentService.findById(id);
 	}

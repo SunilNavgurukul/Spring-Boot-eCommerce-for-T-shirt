@@ -17,7 +17,7 @@ import com.sunil__parcha.Repositories.ReviewRepo;
 public class ProductService {
 	@Autowired
 	private ProductRepo productrepo;
-	
+
 	@Autowired
 	private ReviewRepo reviewrepo;
 
@@ -142,7 +142,6 @@ public class ProductService {
 		return array;
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	public JSONArray findReviewByProductId(int id) {
 		JSONArray array = new JSONArray();
